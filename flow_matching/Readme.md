@@ -6,7 +6,7 @@ A minimal PyTorch implementation of (Conditional) Flow Matching for generative m
 
 After training, the model learns to transport random noise onto the data manifold, successfully capturing the "two moons" shape.
 
-![Generated samples on the two-moons dataset](flow_matching\generated_graph.png)
+![Generated samples on the two-moons dataset](generated_graph.png)
 
 ---
 
@@ -38,7 +38,7 @@ $$
 \mathcal{L}_{\text{CFM}}(v_\theta) = \mathbb{E}_{t, q(x_1), p_0(x_0)} \left[ \left\| v_\theta(\phi_t, t) - (x_1 - x_0) \right\|^2 \right]
 $$
 
-The key theoretical insight is that the gradients of both losses are identical ($\nabla_\theta \mathcal{L}_{\text{FM}} = \nabla_\theta \mathcal{L}_{\text{CFM}}$). By minimizing the easy loss, we are guaranteed to be minimizing the "ideal" one.
+The key theoretical insight is that the gradients of both losses are identical $\nabla_\theta \mathcal{L}_{\text{FM}} = \nabla_\theta \mathcal{L}_{\text{CFM}}$ . By minimizing the easy loss, we are guaranteed to be minimizing the "ideal" one.
 
 ---
 
