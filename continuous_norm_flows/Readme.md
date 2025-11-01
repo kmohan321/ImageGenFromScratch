@@ -6,7 +6,7 @@ A minimal PyTorch implementation of a **Continuous Normalizing Flow (CNF)** for 
 
 After training, the model learns to transform a simple Gaussian distribution onto the data manifold, successfully capturing the "two moons" shape.
 
-![Generated samples on the two-moons dataset](graph_cnf.png.png)
+![Generated samples on the two-moons dataset](graph_cnf.png)
 
 ---
 
