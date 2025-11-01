@@ -45,7 +45,6 @@ $$
 $$
 
 By minimizing the easy loss, we are guaranteed to be minimizing the "ideal" one.
----
 
 ## ✨ Repo Features
 
