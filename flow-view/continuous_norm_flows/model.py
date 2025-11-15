@@ -30,6 +30,9 @@ class VelocityModel(nn.Module):
 
   def forward(self, z, t_start = 0, t_end = 1, ode_steps = 50):
 
+    # t_start = 0 -> x, t_end = 1 -> z (training)
+    # t_start = 1 -> z, t_end = 0 -> x (inference)
+    
     z = z.requires_grad_()
     grid = torch.linspace(t_start, t_end, ode_steps, device = z.device)
     logp_0 = torch.zeros(z.shape[0], device = z.device)
