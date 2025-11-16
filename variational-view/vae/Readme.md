@@ -150,10 +150,10 @@ This gives us our two famous terms:
     * This is the KL divergence between our encoder's "fuzzy region" $q_\phi(z|x)$ and the simple "tidy" prior $p(z)$ (which we choose to be $\mathcal{N}(0, I)$).
     * It acts as a **regularizer**, forcing the encoder to keep the latent space smooth and continuous.
 
-![generated images](gen.png)
+![generated images](gen.png)<br>
 *Figure 1: Generated Image*
 
-![reconstructed images](epoch_015.png)
-*Figure 1: Reconstructed Image*
+![reconstructed images](epoch_015.png)<br>
+*Figure 2: Reconstructed Image*
 
 
