@@ -74,11 +74,10 @@ Now, we use **Bayes' theorem** on the $\log p_\theta(z|x)$ term: $\log p_\theta(
 = \mathbb{E}_{q_\phi(z|x)} \left[ \log q_\phi(z|x) - \log p_\theta(x,z) + \log p_\theta(x) \right]
 ```
 
-Let's split the expectation. Note that $\log p_\theta(x)$ is a constant with respect to $z$, so:
-``````math
-\mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x)] = \log p_\theta(x)
-`````(closing backticks)
-`````
+Let's split the expectation. Note that $\log p_{\theta}(x)$ is a constant with respect to $z$, so:
+```math
+\mathbb{E}_{q_{\phi}(z|x)}[\log p_{\theta}(x)] = \log p_{\theta}(x)
+```
 
 ```math
 = \mathbb{E}_{q_\phi(z|x)} \left[ \log q_\phi(z|x) - \log p_\theta(x,z) \right] + \log p_\theta(x)
