@@ -111,7 +111,7 @@ This is the most important equation:
 \log p_\theta(x) = \underbrace{D_{KL}(q_\phi(z|x) \parallel p_\theta(z|x))}_{\text{The "KL Gap"} \ge 0} + \underbrace{\mathcal{L}(\phi, \theta)}_{\text{The ELBO}}
 ```
 
-Where $\mathcal{L}(\phi, \theta) = \mathbb{E}_{q_\phi(z|x)} \left[ \log \left( \frac{p_\theta(x,z)}{q_\phi(z|x)} \right) \right]$.
+Where $\mathcal{L}(\phi, \theta) = \mathbb{E}_{q_{\phi}(z|x)} \left[ \log \left( \frac{p_{\theta}(x,z)}{q_{\phi}(z|x)} \right) \right]$.
 
 This tells us:
 1.  **It's a "Lower Bound"**: Since the $D_{KL}$ term is always $\ge 0$, we know that $\log p_\theta(x) \ge \mathcal{L}(\phi, \theta)$. This means $\mathcal{L}$ is a **Lower Bound** on the (log) Evidence.
@@ -152,7 +152,7 @@ Let's group the terms:
 = \mathbb{E}_{q_\phi(z|x)} \left[ \log p_\theta(x|z) \right] - \mathbb{E}_{q_\phi(z|x)} \left[ \log q_\phi(z|x) - \log p(z) \right]
 ```
 
-The second term is just the definition of the KL divergence: $\mathbb{E}_q \left[ \log \left( \frac{q}{p} \right) \right] = D_{KL}(q \parallel p)$.
+The second term The second term is just the definition of the KL divergence: $\mathbb{E}_q \left[ \log \left( \frac{q}{p} \right) \right] = D_{\text{KL}}(q \parallel p)$.
 
 ```math
 \mathcal{L}(\phi, \theta) = \underbrace{\mathbb{E}_{q_\phi(z|x)} \left[ \log p_\theta(x|z) \right]}_{\text{Term 1: Reconstruction}} - \underbrace{D_{KL}(q_\phi(z|x) \parallel p(z))}_{\text{Term 2: Regularization}}
@@ -173,7 +173,7 @@ This is the final form of the ELBO that we **maximize**. In practice, most frame
 This gives us our two famous terms:
 
 #### **Term 1: Reconstruction Loss**
-* $- \mathbb{E}_{q_\phi(z|x)} \left[ \log p_\theta(x|z) \right]$
+* $- \mathbb{E}_{q_{\phi}(z|x)} \left[ \log p_{\theta}(x|z) \right]$
 * This is the "negative log-likelihood" of the decoder.
 * It asks: "Given a $z$ from the encoder, how well can the decoder reconstruct the original $x$?"
 * If we assume a Gaussian decoder, this term simplifies to **Mean Squared Error (MSE)**. If we assume a Bernoulli decoder, it simplifies to **Binary Cross-Entropy (BCE)**.
